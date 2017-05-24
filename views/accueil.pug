@@ -1,0 +1,15 @@
+br/
+ul
+    each produit in ingredientsdesproduits
+        li
+            span #[strong.produit #{produit.nom}] #[strong #{produit.prix} €]
+            |
+            |
+            button(class="clickable" id=produit.id title=produit.nom)
+                span.glyphicon.glyphicon-shopping-cart
+            br/
+            span
+                each ingredient in produit.ingredients
+                    span #{ingredient.nom}
+                    |
+                    |

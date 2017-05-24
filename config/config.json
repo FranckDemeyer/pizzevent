@@ -1,0 +1,35 @@
+{
+    "listeningPort": 8080,
+    "authorizedPath": [
+        "/css",
+        "/scripts"
+    ],
+    "unauthorizedPath": [
+        "/config",
+        "/migrations",
+        "/models",
+        "/node_modules",
+        "/seeders"
+    ],
+    "development": {
+        "username": "root",
+        "password": "",
+        "database": "projet1",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    },
+    "test": {
+        "username": "root",
+        "password": "",
+        "database": "projet1",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    },
+    "production": {
+        "username": "root",
+        "password": "",
+        "database": "projet1",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    }
+}

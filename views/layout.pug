@@ -1,0 +1,61 @@
+doctype html
+html
+    head
+        <meta charset="utf-8">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        block titre
+    body
+        <nav id="menu" class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand menunava loadable" id="accueil">Accueil</a>
+            </div> <!--cloture de navbar-header-->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!-- <ul class="nav navbar-nav">
+                    <li><a href="#" class="menunava loadable" id="views/visiteurs/menu">Le Menu</a></li>
+                    <li><a href="#" class="menunava loadable" id="views/visiteurs/plan">Nous trouver</a></li>
+                </ul> -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="panier" class="dropdown">
+                        <a href="#" class="dropdown-toggle menunava" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-shopping-cart"></span> <span id="badgePanier" class="badge"></span></a>
+                        <div class="dropdown-menu" id="mProduit">
+                            <div id="listeProduit">
+                            </div>
+                            <a href="#" class="loadable fclear" id="cart" >Accéder à mon panier</a>
+                        </div>
+                    </li>
+                    <li id="user" class="dropdown">
+                        <a href="#" class="dropdown-toggle menunava" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> <span class="caret"></span></a>
+                        <div class="dropdown-menu" id="mConnect">
+                            <form id="formLogin" class="form text-center">
+                                <input type="text" id="logUName" name="logUName" placeholder="Nom d'utilisateur" />
+                                <input type="password" id="logPwd" name="logPwd" placeholder="Mot de passe" />
+                                <button type="button" id="logBtn"><span class="glyphicon glyphicon-check"></span>&nbsp;Connexion</button>
+                            </form>
+                        </div>
+                    </li> <!--cloture de class dropdown-->
+                </ul>
+            </div> <!--cloture de collapse navbar-collapse-->
+        </div> <!--cloture de container-fluid-->
+        </nav>
+        main
+            block content
+        block scripts
+            script(src="../scripts/jquery-3.1.1.min.js")
+            script(src="../scripts/bootstrap.min.js")
+            script(src="../scripts/mustache.js")
+            script(src="../scripts/client.js")
+            script(type="text/template" id="cartTemplate")
+                button#valCart Valider mon panier
+                br/
+                ul
+                  |  {{#produit}}
+                  |    <li id={{id}}><strong>{{nom}}</strong> prix unitaire : <strong>{{prix}}</strong> Quantité : <strong>{{qte}}</strong> prix total : <strong>{{prixTotal}}</strong></li>
+                  |  {{/produit}}
